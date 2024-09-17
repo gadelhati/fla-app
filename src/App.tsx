@@ -33,6 +33,7 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { Tabs } from './pages/tabs';
 
 setupIonicReact();
 
@@ -48,6 +49,9 @@ const App: React.FC = () => (
         </Route>
         <Route path="/message/:id">
            <ViewMessage />
+        </Route>
+        <Route path="/tabs" exact={true}>
+          <Tabs />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
