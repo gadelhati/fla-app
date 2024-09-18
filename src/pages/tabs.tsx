@@ -21,13 +21,13 @@ export const Tabs = () => {
             </IonTab>
             <IonTabBar slot="bottom">
                 <IonTabButton tab="classification">
-                    <IonThumbnail><img src={football} /></IonThumbnail>Classification
+                    <IonThumbnail><img src={trophy} /></IonThumbnail>Classification
                 </IonTabButton>
                 <IonTabButton tab="matches">
-                    <IonThumbnail><img src={goal} /></IonThumbnail>Matches
+                    <IonThumbnail><img src={football} /></IonThumbnail>Matches
                 </IonTabButton>
                 <IonTabButton tab="results">
-                    <IonThumbnail><img src={trophy} height={'.2rem'} /></IonThumbnail>Results
+                    <IonThumbnail><img src={goal} height={'.2rem'} /></IonThumbnail>Results
                 </IonTabButton>
             </IonTabBar>
         </IonTabs>
