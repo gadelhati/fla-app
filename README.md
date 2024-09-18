@@ -1,7 +1,15 @@
+npm uninstall -g ionic
 npm install -g @ionic/cli
+
 npm install -g @capacitor/assets
-git clone https://github.com/gadelhati/fla-app.git fla-app
-npm install
+
+# CLONE PROJECT
+    git clone https://github.com/gadelhati/fla-app.git fla-app
+# CREATE PROJECT
+    ionic start project-name [tabs|sidemenu|blank|my-first-app|conference]
+    > Angular    |   https://angular.io
+    > React      |   https://reactjs.org
+code project-name
 ionic serve
 
 npm run build
@@ -15,5 +23,4 @@ npx cap add android
 
 # ANGULAR
 npx -p @angular/cli17 ng new my-app-angular --skip-tests
-code my-app-angular
 npm start
