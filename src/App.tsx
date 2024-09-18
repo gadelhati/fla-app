@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonApp, IonRouterOutlet, IonTab, IonTabBar, IonTabButton, IonTabs, IonThumbnail, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import ViewMessage from './pages/ViewMessage';
@@ -33,27 +33,41 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import { Tabs } from './pages/tabs';
+import { Classification } from './pages/classification';
+import { Matches } from './pages/matches';
+import { Results } from './pages/results';
+import football from './assets/image/football-ball.png'
+import goal from './assets/image/goal.png'
+import trophy from './assets/image/trophy.png'
+import './pages/ion.css'
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/" exact={true}>
-          <Redirect to="/tabs" />
-        </Route>
-        <Route path="/home" exact={true}>
-          <Home />
-        </Route>
-        <Route path="/message/:id">
-           <ViewMessage />
-        </Route>
-        <Route path="/tabs" exact={true}>
-          <Tabs />
-        </Route>
-      </IonRouterOutlet>
+      <IonTabs>
+        <IonRouterOutlet>
+          <Route path="/" exact={true}><Redirect to="/classification" /></Route>
+          {/* <Route path="/home" exact={true}><Home /></Route>
+          <Route path="/message/:id"><ViewMessage /></Route> */}
+          {/* <Route path="/tabs" exact={true}><Tabs /></Route> */}
+          <Route path="/classification" render={() => <Classification />} exact={true}></Route>
+          <Route path="/matches" render={() => <Matches />} exact={true}></Route>
+          <Route path="/results" render={() => <Results />} exact={true}></Route>
+        </IonRouterOutlet>
+        <IonTabBar slot="bottom">
+          <IonTabButton tab="classification" href="/classification">
+            <IonThumbnail><img src={trophy} /></IonThumbnail>Classification
+          </IonTabButton>
+          <IonTabButton tab="matches" href="/matches">
+            <IonThumbnail><img src={football} /></IonThumbnail>Matches
+          </IonTabButton>
+          <IonTabButton tab="results" href="/results">
+            <IonThumbnail><img src={goal} /></IonThumbnail>Results
+          </IonTabButton>
+        </IonTabBar>
+      </IonTabs>
     </IonReactRouter>
   </IonApp>
 );
