@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { api } from "../assets/api/api"
-import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonText, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react"
+import { IonBadge, IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonText, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react"
 import icon from '../assets/image/trophy.png'
 // https://github.com/fcoagz/conmebol
 
@@ -24,7 +24,13 @@ export const Classification = () => {
                 <IonList>
                     {results && results.map((element: Classification) => {
                         return <IonItem key={Math.random()}>
-                            <IonLabel className="ion-text-center"><IonText>{element.position}º {element.country}</IonText></IonLabel>
+                            <IonBadge slot="start" color="medium">points {element.points}</IonBadge>
+                            <IonLabel className="ion-text-center">
+                                <IonText>{element.position}º {element.country}</IonText>
+                            </IonLabel>
+                            <IonBadge slot="end" color="success">won {element.won}</IonBadge>
+                            <IonBadge slot="end" color="danger">losses {element.losses}</IonBadge>
+                            <IonBadge slot="end" color="medium">tied {element.tied}</IonBadge>
                         </IonItem>
                     })}
                 </IonList>
