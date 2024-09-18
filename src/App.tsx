@@ -1,8 +1,6 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonTab, IonTabBar, IonTabButton, IonTabs, IonThumbnail, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
-import ViewMessage from './pages/ViewMessage';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -49,9 +47,6 @@ const App: React.FC = () => (
       <IonTabs>
         <IonRouterOutlet>
           <Route path="/" exact={true}><Redirect to="/classification" /></Route>
-          {/* <Route path="/home" exact={true}><Home /></Route>
-          <Route path="/message/:id"><ViewMessage /></Route> */}
-          {/* <Route path="/tabs" exact={true}><Tabs /></Route> */}
           <Route path="/classification" render={() => <Classification />} exact={true}></Route>
           <Route path="/matches" render={() => <Matches />} exact={true}></Route>
           <Route path="/results" render={() => <Results />} exact={true}></Route>
