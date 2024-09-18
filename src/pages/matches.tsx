@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { api } from "../assets/api/api"
-import { IonContent, IonHeader, IonIcon, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList, IonPage, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react"
+import { IonContent, IonHeader, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonPage, IonText, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react"
 import icon from '../assets/image/football-ball.png'
 // https://github.com/fcoagz/conmebol
 
@@ -27,7 +27,9 @@ export const Matches = () => {
                         return Object.entries(element).map(([key, value]: [string, any])=>{
                             return <><IonItemDivider><IonLabel>{key}</IonLabel></IonItemDivider>{value.map((object: Matche)=>{
                                 return <IonItem key={Math.random()}>
-                                    <IonLabel className="ion-text-center">{object.first_team} X {object.second_team}</IonLabel>
+                                    <IonLabel className="ion-text-center">
+                                        <IonText>{object.first_team} X {object.second_team}</IonText>
+                                    </IonLabel>
                                 </IonItem>
                             })}</>
                         })

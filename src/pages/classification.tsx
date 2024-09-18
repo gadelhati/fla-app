@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { api } from "../assets/api/api"
-import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonReorder, IonReorderGroup, IonThumbnail, IonTitle, IonToolbar, ItemReorderEventDetail } from "@ionic/react"
+import { IonContent, IonHeader, IonItem, IonLabel, IonList, IonPage, IonText, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react"
 import icon from '../assets/image/trophy.png'
 // https://github.com/fcoagz/conmebol
 
@@ -12,9 +12,6 @@ export const Classification = () => {
             setResults(response.data.results)
         })
     }, [])
-    const handleReorder = (event: CustomEvent<ItemReorderEventDetail>) => {
-        event.detail.complete();
-    }
     return (
         <IonPage>
             <IonHeader>
@@ -27,7 +24,7 @@ export const Classification = () => {
                 <IonList>
                     {results && results.map((element: Classification) => {
                         return <IonItem key={Math.random()}>
-                            <IonLabel className="ion-text-center">{element.position}º {element.country}</IonLabel>
+                            <IonLabel className="ion-text-center"><IonText>{element.position}º {element.country}</IonText></IonLabel>
                         </IonItem>
                     })}
                 </IonList>
