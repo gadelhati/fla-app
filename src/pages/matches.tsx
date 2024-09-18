@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { api } from "../assets/api/api"
-import { IonContent, IonHeader, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonPage, IonText, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react"
+import { IonContent, IonHeader, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonNote, IonPage, IonText, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react"
 import icon from '../assets/image/football-ball.png'
 // https://github.com/fcoagz/conmebol
 
@@ -30,6 +30,7 @@ export const Matches = () => {
                                     <IonLabel className="ion-text-center">
                                         <IonText>{object.first_team} X {object.second_team}</IonText>
                                     </IonLabel>
+                                    <IonNote slot="end">{object.date.toString()}</IonNote>
                                 </IonItem>
                             })}</>
                         })

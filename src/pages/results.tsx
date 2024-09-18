@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { api } from "../assets/api/api"
-import { IonContent, IonHeader, IonIcon, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList, IonPage, IonText, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react"
+import { IonContent, IonHeader, IonIcon, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList, IonNote, IonPage, IonText, IonThumbnail, IonTitle, IonToolbar } from "@ionic/react"
 import icon from '../assets/image/goal.png'
 // https://github.com/fcoagz/conmebol
 
@@ -32,6 +32,7 @@ export const Results = () => {
                                         <IonText> X </IonText>
                                         <IonText color={object.winner === object.second_team.country ? 'success':''}>{object.second_team.goals} {object.second_team.country}</IonText>
                                     </IonLabel>
+                                    <IonNote slot="end">{object.date.toString()}</IonNote>
                                 </IonItem>
                             })}</>
                         })
