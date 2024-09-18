@@ -12,3 +12,8 @@ npx cap open android
 ionic capacitor build android
 
 npx cap add android
+
+# ANGULAR
+npx -p @angular/cli17 ng new my-app-angular --skip-tests
+code my-app-angular
+npm start
